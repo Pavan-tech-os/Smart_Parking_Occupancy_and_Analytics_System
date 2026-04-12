@@ -1,3 +1,6 @@
 ID,Type,Status
 1,EV,Free
 2,Regular,Occupied
+1,EV,Free
+1,Regular,Free
+3,EV,Free

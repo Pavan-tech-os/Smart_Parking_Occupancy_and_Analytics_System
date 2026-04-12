@@ -1,14 +1,19 @@
 # week9_numpy.py
+
 import numpy as np
 
-# 1 = occupied, 0 = free
-slots = np.array([1,0,1,1,0,0,1])
+def occupancy(slots):
+    data = []
 
-total = len(slots)
-occupied = np.sum(slots)
-free = total - occupied
+    for s in slots:
+        if s.status == "Occupied":
+            data.append(1)
+        else:
+            data.append(0)
 
-print("Total:", total)
-print("Occupied:", occupied)
-print("Free:", free)
-print("Occupancy %:", (occupied/total)*100)
+    arr = np.array(data)
+
+    print("Total Slots:", len(arr))
+    print("Occupied:", np.sum(arr))
+    print("Free:", len(arr) - np.sum(arr))
+    print("Occupancy %:", (np.sum(arr)/len(arr))*100)

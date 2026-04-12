@@ -1,16 +1,18 @@
 # week10_pandas.py
+
 import pandas as pd
 
-data = {
-    "ID":[1,2,3],
-    "Type":["EV","Regular","EV"],
-    "Status":["Free","Occupied","Occupied"]
-}
+def report(slots):
+    data = {
+        "ID": [s.sid for s in slots],
+        "Type": [s.stype for s in slots],
+        "Status": [s.status for s in slots]
+    }
 
-df = pd.DataFrame(data)
+    df = pd.DataFrame(data)
 
-print("\nAll Data:")
-print(df)
+    print("\n--- Full Report ---")
+    print(df)
 
-print("\nOccupied Slots:")
-print(df[df["Status"]=="Occupied"])
+    print("\n--- Slot Type Count ---")
+    print(df["Type"].value_counts())
